@@ -1,0 +1,53 @@
+name: Sugestão de Melhoria
+description: Proponha uma nova funcionalidade, melhoria de interface ou aprimoramento no GBX Harness IDE
+title: "[Sugestão]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por contribuir com a evolução do GBX Harness IDE durante a fase beta! Compartilhe sua ideia detalhadamente.
+
+  - type: input
+    id: area-app
+    attributes:
+      label: Área ou Funcionalidade do Aplicativo
+      description: Qual parte do IDE está relacionada à sua sugestão? (ex.: Canvas de Terminais, Assistente de Início, Gestão de Contas, Painel, Voz, etc.)
+      placeholder: "ex.: Canvas de Terminais"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problema-necessidade
+    attributes:
+      label: Problema ou Necessidade
+      description: Qual problema, gargalo ou dificuldade a sua sugestão visa resolver?
+      placeholder: "Atualmente, quando tento fazer X, acontece Y..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solucao-proposta
+    attributes:
+      label: Solução ou Melhoria Proposta
+      description: Descreva de forma clara e detalhada como você imagina que essa funcionalidade deveria operar.
+      placeholder: "Seria excelente se houvesse uma opção para..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternativas
+    attributes:
+      label: Alternativas Consideradas
+      description: Você considerou alguma alternativa ou solução de contorno?
+      placeholder: "Uma alternativa seria..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: informacoes-adicionais
+    attributes:
+      label: Informações Adicionais / Mockups
+      description: Anexe capturas de tela, diagramas ou referências conceituais para ilustrar sua sugestão.
+    validations:
+      required: false

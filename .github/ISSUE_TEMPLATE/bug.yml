@@ -1,0 +1,77 @@
+name: Reportar um Bug
+description: Registre uma falha, erro ou comportamento inesperado no GBX Harness IDE
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### ⚠️ Aviso de Segurança
+        **Este repositório é público.** Nunca cole chaves de API, senhas, tokens OAuth, e-mails de contas ou dados sigilosos. Use a opção **Exportar diagnóstico** dentro do IDE para gerar relatórios seguros.
+
+  - type: input
+    id: versao-app
+    attributes:
+      label: Versão do GBX Harness IDE
+      description: Informe a versão instalada do aplicativo (exibida no rodapé ou na tela de configurações).
+      placeholder: "ex.: v3.26.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: versao-windows
+    attributes:
+      label: Versão do Windows
+      description: Selecione a versão do sistema operacional onde o problema ocorreu.
+      options:
+        - "Windows 11 x64 (23H2 ou mais recente)"
+        - "Windows 11 x64 (22H2 / 21H2)"
+        - "Windows 10 x64 (22H2)"
+        - "Outra (especificar nos detalhes)"
+    validations:
+      required: true
+
+  - type: input
+    id: passo-assistente
+    attributes:
+      label: Passo do Assistente ou Tela
+      description: Em qual tela ou momento o problema ocorreu? (ex.: S0 Boas-vindas, S1 Pré-requisitos, S2 Provisão, S3 Login de Motores, Terminal, Canvas, etc.)
+      placeholder: "ex.: S1 Pré-requisitos ao clicar em instalar Node"
+    validations:
+      required: false
+
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Comportamento Esperado
+      description: O que você esperava que acontecesse?
+      placeholder: "Descreva o comportamento correto esperado."
+    validations:
+      required: true
+
+  - type: textarea
+    id: ocorrido
+    attributes:
+      label: O que aconteceu de fato
+      description: Descreva o erro ou comportamento observado e os passos exatos para reproduzi-lo.
+      placeholder: "1. Abri o app...\n2. Cliquei em...\n3. Apareceu o erro..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: diagnostico
+    attributes:
+      label: Diagnóstico Saneado / Detalhes de Log
+      description: Anexe o arquivo exportado via 'Exportar diagnóstico' no IDE ou cole trechos de erro (certifique-se de que não contenham chaves ou dados privados).
+      placeholder: "Arraste o arquivo .json/.zip gerado pelo 'Exportar diagnóstico' para cá ou cole o log saneado."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: termos-seguranca
+    attributes:
+      label: Confirmação de Segurança
+      description: Marque para confirmar a revisão do conteúdo antes do envio.
+      options:
+        - label: "Confirmo que revisei o conteúdo desta issue e NÃO incluí tokens de API, chaves privadas, senhas, dados de contas ou qualquer informação sigilosa."
+          required: true
